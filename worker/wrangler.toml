@@ -1,0 +1,7 @@
+name = "dotpy-auth"
+main = "auth.js"
+compatibility_date = "2026-01-01"
+
+# Requires dotpy.blog to be a zone on this Cloudflare account.
+# `npx wrangler deploy` will create the DNS record for the custom domain.
+routes = [{ pattern = "auth.dotpy.blog", custom_domain = true }]

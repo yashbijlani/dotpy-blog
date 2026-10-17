@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WRITE — DOTPY BLOG</title>
+<meta name="robots" content="noindex">
+<meta name="color-scheme" content="dark">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23030503'/><text x='16' y='23' font-family='monospace' font-size='20' fill='%2363d471' text-anchor='middle'>_</text></svg>">
+<link rel="stylesheet" href="{{root}}static/style.css">
+</head>
+<body>
+<main class="wrap editor-shell">
+  <a class="brand" href="{{root}}">DOTPY BLOG</a>
+  <div class="rule short"></div>
+
+  <section class="fm" aria-label="post front matter">
+    <div class="fm-row">
+      <label for="f-title">Title</label>
+      <input id="f-title" class="fm-input" type="text" autocomplete="off"
+             spellcheck="false" placeholder="untitled">
+    </div>
+    <div class="fm-row">
+      <label for="f-slug">Slug</label>
+      <div class="fm-slug">
+        <span class="dim">/</span>
+        <input id="f-slug" class="fm-input" type="text" autocomplete="off"
+               spellcheck="false" placeholder="auto">
+        <span class="dim">/</span>
+      </div>
+    </div>
+    <div class="fm-row">
+      <label for="f-date">Date</label>
+      <input id="f-date" class="fm-input" type="date">
+    </div>
+    <div class="fm-row">
+      <label for="f-blurb">Blurb</label>
+      <input id="f-blurb" class="fm-input" type="text" autocomplete="off"
+             spellcheck="false" placeholder="one line for the index and feed">
+    </div>
+    <div class="fm-row">
+      <label for="f-draft">Draft</label>
+      <label class="check">
+        <input id="f-draft" type="checkbox">
+        <span>keep out of the build</span>
+      </label>
+    </div>
+
+    <div class="fm-actions">
+      <button class="btn primary" id="publish">publish</button>
+      <button class="btn" id="signin">sign in with github</button>
+      <button class="btn" id="signout" hidden>sign out</button>
+      <span class="fm-note" id="note"></span>
+    </div>
+
+    <div class="device" id="device" hidden>
+      <p>Open
+        <a href="https://github.com/login/device" target="_blank" rel="noopener">github.com/login/device</a>
+        and enter this code:</p>
+      <p class="code" id="device-code">————</p>
+      <p class="dim" id="device-state">waiting for github…</p>
+    </div>
+  </section>
+
+  <div class="rule short"></div>
+
+  <div class="toolbar">
+    <button class="btn" id="new">new</button>
+    <button class="btn" id="copy">copy .md</button>
+    <button class="btn" id="download">download</button>
+    <button class="btn" id="wipe">wipe</button>
+  </div>
+
+  <article class="doc editor" id="editor" contenteditable="true"
+           spellcheck="false" data-placeholder="start typing…">
+  </article>
+</main>
+
+<footer class="statusbar">
+  <div class="left">
+    <svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg>
+    <svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+    <span class="state" id="state">Saved draft.md</span>
+    <span class="who" id="who"></span>
+  </div>
+  <div class="right">
+    <span class="words" id="words">0 Words</span>
+  </div>
+</footer>
+
+<script src="{{root}}static/config.js"></script>
+<script src="{{root}}static/editor.js"></script>
+</body>
+</html>

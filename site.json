@@ -1,0 +1,15 @@
+{
+  "site_url": "https://dotpy.blog",
+  "title": "DOTPY BLOG",
+  "tagline": "Notes written by a human, typed by hand, rendered by a script.",
+  "author": "Yash Bijlani",
+  "repo": {
+    "owner": "yashbijlani",
+    "name": "dotpy-blog",
+    "branch": "main"
+  },
+  "oauth": {
+    "client_id": "",
+    "worker_url": "https://auth.dotpy.blog"
+  }
+}
